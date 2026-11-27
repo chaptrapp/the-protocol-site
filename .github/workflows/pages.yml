@@ -1,3 +1,4 @@
+# Publicación estática de The Protocol
 name: Publicar copia estática
 
 on:
@@ -23,22 +24,18 @@ jobs:
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
-
       - name: Preparar archivos del sitio
         run: |
           rm -rf _site
           mkdir _site
           unzip -q the-protocol-static-site.zip -d _site
           touch _site/.nojekyll
-
       - name: Configurar Pages
         uses: actions/configure-pages@v5
-
       - name: Crear artefacto de Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
       - name: Publicar en GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
