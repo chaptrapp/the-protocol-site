@@ -1,1 +1,43 @@
-# Publicación estática de The Protocolname: Publicar copia estáticaon:  push:    branches: ["main"]  workflow_dispatch:permissions:  contents: read  pages: write  id-token: writeconcurrency:  group: pages  cancel-in-progress: truejobs:  deploy:    environment:      name: github-pages      url: ${{ steps.deployment.outputs.page_url }}    runs-on: ubuntu-latest    steps:      - name: Descargar el repositorio        uses: actions/checkout@v4      - name: Preparar archivos del sitio        run: |          rm -rf _site          mkdir _site          unzip -q the-protocol-static-site-v4.zip -d _site          touch _site/.nojekyll      - name: Configurar Pages        uses: actions/configure-pages@v5      - name: Crear artefacto de Pages        uses: actions/upload-pages-artifact@v3
+# Publicación estática de The Protocol
+name: Publicar copia estática
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+      - name: Preparar archivos del sitio
+        run: |
+          rm -rf _site
+          mkdir _site
+          unzip -q the-protocol-static-site-v4.zip -d _site
+          touch _site/.nojekyll
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Crear artefacto de Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Esperar sincronización del artefacto
+        run: sleep 15
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
