@@ -36,6 +36,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+      - name: Esperar sincronización del artefacto
+        run: sleep 15
       - name: Publicar en GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
