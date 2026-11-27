@@ -28,7 +28,7 @@ jobs:
         run: |
           rm -rf _site
           mkdir _site
-          unzip -q the-protocol-static-site.zip -d _site
+          unzip -q the-protocol-static-site-v2.zip -d _site
           touch _site/.nojekyll
       - name: Configurar Pages
         uses: actions/configure-pages@v5
