@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE OFFICERS CLUB | THE PROTOCOL</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../protocol-pages.css">
+    <style>
+        :root {
+            --rank-gold: #f59e0b;
+            --neon-green: #00ff41;
+            --dark-bg: #050505;
+            --panel-bg: #0a0a0a;
+            --border-color: #333;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: #e5e5e5;
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .mono-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .text-gold {
+            color: var(--rank-gold);
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+        }
+        .border-gold {
+            border-color: var(--rank-gold);
+        }
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #111 1px, transparent 1px),
+                              linear-gradient(to bottom, #111 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(245, 158, 11, 0.05); /* Amber tint for Officers */
+            position: absolute;
+            z-index: 10;
+            animation: scanline 8s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scanline {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+        .btn-gold {
+            background-color: transparent;
+            border: 1px solid var(--rank-gold);
+            color: var(--rank-gold);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-gold:hover {
+            background-color: var(--rank-gold);
+            color: black;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .card-hover:hover {
+            border-color: var(--rank-gold);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Scanline Overlay -->
+    <!-- Top Status Bar -->
+            RESTRICTED AREA // ALUMNI ONLY
+            STATUS: ACTIVE
+    <!-- Hero Section -->
+    <section>
+                <p>Membresía de Continuidad</p>
+                <h1>
+                    THE OFFICERS<br>
+                    CLUB
+                </h1>
+                <p>
+                    La fluidez no se posee, se alquila. Y la renta se paga todos los días.<br>
+                    Mantenimiento de alto nivel + Networking estratégico para graduados.
+                </p>
+                    <a href="/the-protocol-site/producto/officers-club">
+                         SOLICITAR ACCESO
+                    </a>
+            <!-- Rank Insignia Graphic (CSS Generated) -->
+    </section>
+    <!-- The Threat (Atrophy) -->
+    <section>
+            <h2>
+                LA AMENAZA: ENTROPÍA LINGÜÍSTICA
+            </h2>
+            <p>
+                Ya hiciste el trabajo duro. Ya pasaste por el infierno. Ya hablás. <br>
+                Pero el cerebro es eficiente: <strong>lo que no usa, lo elimina.</strong>
+                <br><br>
+                Sin la presión del entorno táctico, tu fluidez empieza a degradarse en 30 días.
+                El vocabulario se oxida. La velocidad de respuesta cae.
+                <br>
+                THE OFFICERS CLUB es el antídoto contra la atrofia.
+            </p>
+                > NO GRAMMAR CLASSES
+                > NO TEXTBOOKS
+                > JUST HIGH PERFORMANCE
+    </section>
+    <!-- The Assets (What's Included) -->
+    <section>
+            ASSETS & RESOURCES
+            <h2>EL ARSENAL</h2>
+            <!-- Asset 1: App -->
+                <h3>NEURO-MAINTENANCE</h3>
+                <p>ACCESS: 24/7 // AI POWERED</p>
+                <p>
+                    Acceso continuo a la App con nuestra IA entrenada. Diseñada para mantener tus vías neuronales activas con micro-dosis de entrenamiento diario. No pierdas la agilidad mental.
+                </p>
+            <!-- Asset 2: War Room -->
+                <h3>THE WAR ROOM</h3>
+                <p>FREQ: MONTHLY // LIVE OPS</p>
+                <p>
+                    1 Sesión Mensual en Vivo. No es una clase. Es una arena de debate. Discutimos Tech, Geopolítica, Negocios y Estrategia. Si no tenés una opinión formada, la vas a tener que desarrollar.
+                </p>
+            <!-- Asset 3: Network -->
+                <h3>OFFICERS MESS</h3>
+                <p>VIP COMMUNITY // NETWORKING</p>
+                <p>
+                    Acceso exclusivo a la comunidad VIP. Estás rodeado de otros graduados que sobrevivieron al rigor. CEOs, Fundadores y Directores. Tu red de contactos es tu patrimonio neto.
+                </p>
+    </section>
+    <!-- Pricing & CTA -->
+    <section id="join">
+        <!-- Decoration -->
+            CLUB
+                <h2>MANTENÉ TU RANGO.</h2>
+                <p>
+                    Membresía exclusiva para Alumni de THE PROTOCOL.
+                    <br>
+                    Podés cancelar cuando quieras, pero si salís, perdés tu antigüedad y tu lugar en el War Room.
+                </p>
+                <ul>
+                    <li> App Access (Unlimited)</li>
+                    <li> 1x Monthly War Room</li>
+                    <li> High-Level Networking</li>
+                </ul>
+                <p>MEMBERSHIP DUES</p>
+                $57
+                / mes
+                <a href="/the-protocol-site/producto/officers-club">
+                    INICIAR SUSCRIPCIÓN
+                </a>
+    </section>
+</body>
+</html>
+
