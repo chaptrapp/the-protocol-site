@@ -32,6 +32,7 @@ jobs:
           touch _site/.nojekyll
           rm -rf _site/contrato
           cp -r static-overrides/. _site/
+          perl -0pi -e 's#\s*<li class="elementor-icon-list-item">\s*<a href="/the-protocol-site/contrato/">.*?</a>\s*</li>##s' _site/index.html
       - name: Configurar Pages
         uses: actions/configure-pages@v5
       - name: Crear artefacto de Pages
