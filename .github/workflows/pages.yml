@@ -30,6 +30,8 @@ jobs:
           mkdir _site
           unzip -q the-protocol-static-site-v4.zip -d _site
           touch _site/.nojekyll
+          rm -rf _site/contrato
+          cp -r static-overrides/. _site/
       - name: Configurar Pages
         uses: actions/configure-pages@v5
       - name: Crear artefacto de Pages
